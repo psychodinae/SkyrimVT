@@ -1,2 +1,2 @@
 # SkyrimVT
-Game Skyrim MMORPG "online" baseado em "Rooms" para o VT IGN, estilo Zork.
+Game Skyrim MMORPG "online" para o VT IGN baseado em "Rooms", estilo Zork.
