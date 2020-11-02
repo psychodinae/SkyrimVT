@@ -102,27 +102,27 @@ class Orm:
     insert into mapa(id, nome_do_local, nome_amigavel, info, saidas)
     values(
         1,
-        'Reino Xis',
-        'o Reino Xis|no Reino Xis',
-        'Grandioso reino de xis, lar dos nordicos belos e morais',
+        'Whiterun',
+        'o Reino Whiterun|no Reino Whiterun',
+        'Whiterun é uma das nove principais cidades da província de Skyrim',
         '{"portao_do_reino": 2, "castelo": 3}'
     );
 
     insert into mapa(id, nome_do_local, nome_amigavel, info, saidas)
     values(
         2,
-        'Portao pricipal do Reino Xis',
-        'o Portao pricipal do Reino Xis|no Portao pricipal do Reino Xis',
-        'Portao de acesso ao reino Xis, daqui é possivel ver a imponencia das muralhas que cercam o Castelo',
+        'Portao pricipal de Whiterun',
+        'o Portao pricipal de Whiterun|no Portao pricipal de Whiterun',
+        'Portao pricipal de acesso a Whiterun, daqui é possivel ver a imponencia das muralhas que cercam o Castelo',
         '{"reino": 1, "estabulo": 4, "caverna_sombria": 5}'
     );
 
     insert into mapa(id, nome_do_local, nome_amigavel, info, saidas)
     values(
         3,
-        'Castelo do rei Xisto',
-        'o Castelo do rei Xisto|no Castelo do rei Xisto',
-        'Castelo do rei xisto, O quente',
+        'Castelo Dragonsreach',
+        'o Castelo Dragonsreach|no Castelo Dragonsreach',
+        'Castelo do Rei Balgruuf o Maior',
         '{"reino": 1}'
 
     );
