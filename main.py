@@ -64,6 +64,8 @@ if __name__ == '__main__':
     * comandos existentes no momento:
     
     'ANDAR'      ex: <ANDAR castelo>
+                 retorna:
+                 >>>'@dalton voçê foi para o Castelo Dragonsreach'
     
     
     'LOCALIZAR'  ex: <LOCALIZAR> ou <LOCALIZAR info>
