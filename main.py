@@ -65,14 +65,39 @@ if __name__ == '__main__':
     
     'ANDAR'      ex: <ANDAR castelo>
     
+    
     'LOCALIZAR'  ex: <LOCALIZAR> ou <LOCALIZAR info>
+                 retorna:
+                 >>>"@dalton voçê atualmente está no Reino Whiterun. Voce pode ir para: ['portao_do_reino', 'castelo']"
+                    
+                 ou <LOCALIZAR info>
+                 retorna:
+                 >>>'@dalton Descricao do local: Whiterun é uma das nove principais cidades da província de Skyrim'
+                
+       
+    'INVENTARIO' ex: <INVENTARIO>
+                 retorna:
+                 >>>"@dalton inventario: [['ouro', 50, 1], ['poção_fraca', 5, 1], ['espada_de_ferro', 1, 1], 
+                        ['poção_magia_simples', 5, 1], ['picareta', 1, 1]] PAGINA 1 de 2"
+                        
+                ou <INVENTARIO 1> (para navegar pelas paginas)
+                retorna:
+                >>>"@dalton inventario: [['tunica_velha', 1, 1], ['calça_velha', 1, 1], ['botas_velhas', 1, 1], 
+                                         ['capuz_ordinario', 1, 1]] PAGINA 2 de 2"
+                 
     
-    'INVENTARIO' ex: <INVENTARIO> ou <INVENTARIO 1> (para navegar pelas paginas)
-    
-    'EQUIPAR'    ex: <EQUIPAR tunica_velha> ou <EQUIPAR espada_de_ferro mao_direita> (items "seguraveis"
-                    tem que escolher em qual mao)
+    'EQUIPAR'    ex: <EQUIPAR tunica_velha> ou <EQUIPAR espada_de_ferro mao_direita> (items "seguraveis"  tem que 
+                     escolher em qual mao).
+                 retorna:
+                 >>>"@psyco 'espada_de_ferro' foi equipado"
                     
     'DESCARTAR'  ex:  DESCARTAR picareta ou <DESCARTAR poção_fraca 5> (mais a quantidade de items)
+                 retorna:
+                 >>>'@fox voçê tem certeza que quer excluir este item, se sim digite: "DESCARTAR sim"
+                 
+                 se o proximo comando for <DESCARTAR sim> deleta o item do inventario e obviamente se o usuario
+                 estiver equipadando e nao tiver outros iguais ira desequipa-lo.
+                 Qualquer outro comando ira cancelar a operacao.
     
     """
 
@@ -83,6 +108,8 @@ if __name__ == '__main__':
         Orm('sky.db').criar_db()
         print('DB criado com sucesso!')
 
-    lst = [['dalton', 'LOCALIZAR', ''], ['fox', 'DESCARTAR', 'picareta'], ['psyco', 'EQUIPAR', 'espada_de_ferro mao_esquerda']]
+    lst = [['dalton', 'LOCALIZAR', '2'], ['fox', 'DESCARTAR', 'picareta'], ['psyco', 'EQUIPAR', 'espada_de_ferro mao_esquerda']]
 
     print(Game('sky.db').inicio(lst))
+    # retorna:
+    # >>> ["@dalton voçê atualmente está no Reino Whiterun. Voce pode ir para: ['portao_do_reino', 'castelo']", '@fox voçê tem certeza que quer excluir este item, se sim digite: "DESCARTAR sim".', "@psyco 'espada_de_ferro' foi equipado"]
